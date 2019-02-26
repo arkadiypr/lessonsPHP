@@ -2,6 +2,7 @@ Git
 Git
 Git
 26/02/2019 14:35
+14:49
 
 skillup@skillup-Aspire-ES1-511:~$ mkdir pryadko
 skillup@skillup-Aspire-ES1-511:~$ cd pry
