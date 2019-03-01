@@ -1,0 +1,19 @@
+h1 {
+    color: brown;
+}
+
+.email-label {
+    color: red;
+}
+
+label.email-label {
+    font-weight: bold;
+}
+
+.password-label {
+    text-transform: uppercase;
+}
+
+label input {
+    transform: scale(2);
+}
