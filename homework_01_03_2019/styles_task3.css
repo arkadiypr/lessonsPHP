@@ -1,0 +1,10 @@
+label {
+    border: red solid 1px;
+}
+.radio-group {
+    border: black solid 1px;
+    padding: 10px;
+}
+.button-send {
+    margin-top: 10px;
+}

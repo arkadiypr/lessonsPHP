@@ -2,9 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Task 3</title>
+    <link rel="stylesheet" href="styles_task3.css">
 </head>
 <body>
-
+<form method="get">
+    <input type="checkbox" id="one" value="1" name="check">
+    <label for="one">
+        Это метка для чекбокса: нажмите на меня - чекбокс сменит галочку!
+    </label><br><br>
+    <input type="checkbox" id="two" value="2" checked name="check">
+    <label for="two">
+        Я отмечен по умолчанию!
+    </label><br><br>
+    <input type="checkbox" id="tree" value="3" checked disabled name="check">
+    <label for="tree">
+        Я disabled!
+    </label><br><br>
+    <div class="radio-group">
+        <p>Это группа радиокнопок - только одна из них может быть отмечена!</p>
+        <input type="radio" id="radio1" value="1" name="choice">
+        <label for="radio1">Это метка для радио
+        </label><br><br>
+        <input type="radio" id="radio2" value="2" name="choice">
+        <label for="radio2">Это метка для радио
+        </label><br><br>
+    </div>
+    <button class="button-send">Отправить на сервер</button>
+</form>
 </body>
 </html>
