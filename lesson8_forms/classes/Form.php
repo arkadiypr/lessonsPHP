@@ -5,7 +5,7 @@ class Form
 {
     /**
      * Fields of form
-     * @var array
+     * @var array FormField
      */
     private $fields;
 
@@ -28,11 +28,21 @@ class Form
 
     public function render()
     {
-        $html = sprintf('<form method="%s>" action="%s"', $this->method, $this->action);
+        $html = sprintf('<form method="%s" action="%s"></form>', $this->method, $this->action);
 //        $html ='<form method="' . $this->method . '" action="' . $this->action . '">';
+
+        foreach ($this->fields as $field) {
+            $html .= $field->render();
+        }
+
         $html .= '</form>';
 
         return $html;
+    }
+
+    public function addField(FormField $field)
+    {
+        $this->fields[$field->getName()] = $field;
     }
 
 }
