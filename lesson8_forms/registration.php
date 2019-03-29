@@ -7,6 +7,8 @@ $form = new Form('post', 'action.php');
 
 $formGet = new Form('get', 'action.php');
 
+echo 'reg';
+
 ?>
 
 <!doctype html>

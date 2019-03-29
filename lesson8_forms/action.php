@@ -1,5 +1,10 @@
 <?php
 
+echo '<pre>';
+var_dump($_POST);
+echo '</pre>';
+
+
 $errors = [];
 
 if (empty($_POST['email'])) {
@@ -23,9 +28,14 @@ if ($errors) {
     exit();
 }
 
-$file = fopen('user.txt', 'a');
-$line = $_POST['email'] . "\t" . $_POST['password'] . "]n";
+$file = fopen('users.txt', 'a');
+$line = $_POST['email'] . " " . $_POST['password'] . "\n";
 fputs($file, $line);
 fclose($file);
 
-header('Location: thanks.html');
+echo '<pre>';
+var_dump($_POST);
+echo '</pre>';
+
+
+header('Location: thanks.phtml');
