@@ -1,0 +1,16 @@
+label {
+	width: 180px;
+	display: inline-block;
+}
+
+.row {
+	margin-bottom: 10px;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+td, th {
+	border: 1px solid black;
+}
