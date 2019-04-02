@@ -1,10 +1,10 @@
 <?php
-	if (!file_exists('users.txt')) {
+	if (!file_exists('user.txt')) {
 		echo 'File not found';
 		exit();
 	}
 
-	$file = fopen('users.txt', 'r');
+	$file = fopen('user.txt', 'r');
 ?>
 <!DOCTYPE html>
 <html lang="ru">
