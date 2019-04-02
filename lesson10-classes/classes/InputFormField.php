@@ -10,11 +10,17 @@ class InputFormField extends FormField
      */
     protected $label;
 
+    /**
+     * @var ValidatorInterface
+     */
+    protected $validators;
+
     public function __construct(string $name, string $label)
     {
         parent::__construct($name);
 
         $this->name = $label;
+        $this->validators = [];
     }
 
     public function render() : string
@@ -28,6 +34,24 @@ class InputFormField extends FormField
         $html .= '</div>';
 
         return $html;
+    }
+
+    public function addValidator(ValidatorInterface $validator)
+    {
+        $this->validators = $validator;
+    }
+
+    public function validate() : bool
+    {
+        $hasErrors = false;
+
+        foreach ($this->validators as $validator) {
+            if ($validator->validate($this->value) === false) {
+                $hasErrors = true;
+            }
+        }
+
+        return $hasErrors;
     }
 
 }

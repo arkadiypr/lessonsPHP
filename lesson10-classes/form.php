@@ -13,7 +13,10 @@ Registry::getInstance()->setFormElementClass('form-control');
 
 $form = new Form('post', 'action.php');
 $email = new InputFormField('email', 'Email');
+$email->addValidator(new EmptyValidator());
+$email->addValidator(new EmailValidator());
 $form->addField($email);
+
 $form->addField(new InputFormField('firstName', 'Имя'));
 $form->addField(new PasswordFormField('password', 'Пароль'));
 $form->addField(new PasswordFormField('passwordConfirmation', 'Подтверждение пароля'));
