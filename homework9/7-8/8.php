@@ -1,6 +1,7 @@
 <?php
 
 
+
 include 'SmartForm.php';
 
 $form = new SmartForm();
