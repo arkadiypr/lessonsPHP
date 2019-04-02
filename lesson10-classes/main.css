@@ -14,3 +14,7 @@ table {
 td, th {
 	border: 1px solid black;
 }
+
+.form-control {
+	border: 1px solid red;
+}

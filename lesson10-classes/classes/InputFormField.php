@@ -22,8 +22,8 @@ class InputFormField extends FormField
         $html = '<div class="row">';
         $html .= sprintf('<label for="%s">%s</label>', $this->name, $this->label);
         $html .= sprintf(
-            '<input type="%s" id="%s" name="%s" value="%s">', $this->type,
-            $this->name, $this->name, $this->value
+            '<input type="%s" id="%s" name="%s" value="%s" class="%s">', $this->type,
+            $this->name, $this->name, $this->value, Registry::getInstance()->getFormElementClass()
         );
         $html .= '</div>';
 

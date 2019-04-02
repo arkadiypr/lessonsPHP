@@ -9,6 +9,8 @@ spl_autoload_register(function ($name) {
     require __DIR__ . '/classes/' . $name . '.php';
 });
 
+Registry::getInstance()->setFormElementClass('form-control');
+
 $form = new Form('post', 'action.php');
 $email = new InputFormField('email', 'Email');
 $form->addField($email);
