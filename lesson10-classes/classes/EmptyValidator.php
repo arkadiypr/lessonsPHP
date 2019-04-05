@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: skillup
- * Date: 02.04.19
- * Time: 19:59
- */
 
 class EmptyValidator implements ValidatorInterface
 {

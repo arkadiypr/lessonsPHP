@@ -11,11 +11,12 @@ class EmailValidator implements ValidatorInterface
 
     public function validate(string $value): bool
     {
-        return mb_strpos($value,'@') !== false;
+        return preg_match('|@.+\.|', $value);
     }
 
     public function getMessage(): string
     {
         return 'Email должен содержать @';
     }
+
 }
