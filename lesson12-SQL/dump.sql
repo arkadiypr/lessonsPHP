@@ -1,8 +1,8 @@
 -- MySQL dump 10.13  Distrib 5.7.25, for Linux (x86_64)
 --
--- Host: 127.0.0.1    Database: test902
+-- Host: 127.0.0.1    Database: test
 -- ------------------------------------------------------
--- Server version	5.7.25-0ubuntu0.16.04.2
+-- Server version	5.7.25-0ubuntu0.18.10.2
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -35,7 +35,7 @@ CREATE TABLE `groups` (
 
 LOCK TABLES `groups` WRITE;
 /*!40000 ALTER TABLE `groups` DISABLE KEYS */;
-INSERT INTO `groups` VALUES (1,'Программисты'),(3,'Тестеры');
+INSERT INTO `groups` VALUES (1,'Программисты'),(2,'Тестеры');
 /*!40000 ALTER TABLE `groups` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -48,17 +48,17 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `first_name` varchar(200) CHARACTER SET latin1 NOT NULL,
-  `last_name` varchar(200) CHARACTER SET latin1 NOT NULL,
-  `birthday` date DEFAULT NULL,
-  `email` varchar(200) CHARACTER SET latin1 NOT NULL,
-  `password` varchar(200) CHARACTER SET latin1 NOT NULL,
-  `group_id` int(11) NOT NULL,
+  `first_name` varchar(200) NOT NULL,
+  `last_name` varchar(200) NOT NULL,
+  `birthdate` date DEFAULT NULL,
+  `email` varchar(200) NOT NULL,
+  `password` varchar(200) NOT NULL,
+  `group_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_uindex` (`email`),
   KEY `users_groups_id_fk` (`group_id`),
   CONSTRAINT `users_groups_id_fk` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +67,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'test2','tester2','1980-02-14','test3@test.com','password',1),(8,'Ivan','Ivanov','1980-02-25','test33@test.com','password',1),(9,'test3','tester2','1980-09-04','test4@test.com','password',3),(10,'test4','tester2','1980-02-14','test5@test.com','password',3);
+INSERT INTO `users` VALUES (1,'Тест','Тестер','2002-04-23','test@test.com','test',1),(2,'ttt','ttt',NULL,'test2@test.com','test',1),(3,'Глеб','Синьковский','1980-02-14','gleb.sinkovskiy@gmail.com','password',2),(4,'Иван','Сидоров','1980-02-14','gleb.sinkovskiy1@gmail.com','password',NULL),(8,'gfgfjg','ghjghjghj',NULL,'ghjgj','gjhgj',2);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -80,4 +80,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-09 21:21:51
+-- Dump completed on 2019-04-09 21:21:49
